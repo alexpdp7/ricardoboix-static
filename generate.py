@@ -3,7 +3,7 @@ import subprocess
 import htmlgenerator as h
 
 
-def template(title="title", selected_tab=None, id=None):
+def template(content, title="title", selected_tab=None, id=None):
     tabs = {
         "Home": "index.html",
         "Galería de arte": "galeria.html",
@@ -47,7 +47,7 @@ def template(title="title", selected_tab=None, id=None):
                 ),
                 _class="container",
             ),
-            h.DIV("Ricardo Boix", id="titulo"),
+            content,
         ),
         doctype="html",
         id=id,
@@ -60,5 +60,9 @@ def tidy(s):
 
 
 with open("index.html", "w") as f:
-    f.write(tidy(h.render(template(title="Ricardo Boix", selected_tab="Home", id="portada"), {})))
-
+    f.write(tidy(h.render(template(
+        title="Ricardo Boix",
+        selected_tab="Home",
+        id="portada",
+        content=h.DIV("Ricardo Boix", id="titulo"),
+    ), {})))
