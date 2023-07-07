@@ -3,7 +3,7 @@ import subprocess
 import htmlgenerator as h
 
 
-def template(content, title="title", selected_tab=None, id=None):
+def template(content, title="title", selected_tab=None, id=None, extra_container_contents=[]):
     tabs = {
         "Home": "index.html",
         "Galería de arte": "galeria.html",
@@ -24,6 +24,20 @@ def template(content, title="title", selected_tab=None, id=None):
         )
         for tab, link in tabs.items()
     ]
+
+    container_contents = [h.DIV(
+        h.DIV(
+            h.UL(
+                *menu_lis,
+                _class="nav nav-tabs",
+            ),
+            _class="col-md-12",
+        ),
+        _class="row",
+    )]
+
+    container_contents += extra_container_contents
+
     return h.HTML(
         h.HEAD(
             h.TITLE(title),
@@ -35,16 +49,7 @@ def template(content, title="title", selected_tab=None, id=None):
         ),
         h.BODY(
             h.DIV(
-                h.DIV(
-                    h.DIV(
-                        h.UL(
-                            *menu_lis,
-                            _class="nav nav-tabs",
-                        ),
-                        _class="col-md-12",
-                    ),
-                    _class="row",
-                ),
+                *container_contents,
                 _class="container",
             ),
             content,
@@ -65,4 +70,33 @@ with open("index.html", "w") as f:
         selected_tab="Home",
         id="portada",
         content=h.DIV("Ricardo Boix", id="titulo"),
+    ), {})))
+
+with open("galeria.html", "w") as f:
+    links = [
+        h.A(
+            h.IMG(
+                alt=f"Cuadro {i}",  # TODO
+                src=f"foto/{i}.jpg",
+                _class="cuadro",
+            ),
+            href=f"foto/{i}.jpg",
+        )
+        for i in range(1, 61)
+    ]
+    extra_container_contents = h.DIV(
+        h.BR(),
+        h.BR(),
+        h.DIV(
+            *links,
+            _class="col-md-12",
+        ),
+        _class="row",
+    )
+    f.write(tidy(h.render(template(
+        title="Ricardo Boix - Galería de arte",
+        selected_tab="Galería de arte",
+        id="galeria",
+        content=None, # h.DIV("Ricardo Boix", id="titulo"),
+        extra_container_contents=[extra_container_contents],
     ), {})))
