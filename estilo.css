@@ -115,7 +115,7 @@ body
   background-color: #ccc;
 }
 
-.bodylibro
+#bodylibro body
 {
   background-color: rgba(252, 255, 81, 0.53);
 }
@@ -141,12 +141,12 @@ a
   background-color: #9d9d9d !important;
 }
 
-.bodylibro	.nav-tabs > li > a:hover
+#bodylibro	.nav-tabs > li > a:hover
 {
   background-color: #fcff51 !important;
 }
 
-.bodylibro .nav-tabs > li.active > a
+#bodylibro .nav-tabs > li.active > a
 {
   background-color: #fcff51 !important;
 }

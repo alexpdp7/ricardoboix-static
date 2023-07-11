@@ -1,3 +1,4 @@
+import pathlib
 import subprocess
 
 import htmlgenerator as h
@@ -98,5 +99,62 @@ with open("galeria.html", "w") as f:
         selected_tab="Galería de arte",
         id="galeria",
         content=None, # h.DIV("Ricardo Boix", id="titulo"),
+        extra_container_contents=[extra_container_contents],
+    ), {})))
+
+with open("poesias.html", "w") as f:
+    def _p(path: pathlib.Path):
+        with open(path) as f:
+            has_audio = "audio:" in f.read()
+
+        text = path.stem
+        if has_audio:
+            text += " (audio)"
+        return (path.stem, text)
+    poesias = [
+        h.P(
+            h.A(
+                text,
+                href=f"poesias/{titulo}.html"
+            ),
+            style="text-align: center",
+        )
+        for (titulo, text) in map(_p, sorted(pathlib.Path("poemas").glob("*.md")))
+    ]
+    extra_container_contents = h.DIV(
+        h.BR(),
+        h.BR(),
+        h.DIV(
+            h.BR(),
+            h.BR(),
+            h.DIV(
+                h.IMG(src="adorno_l.png"),
+                h.IMG(src="adorno_l.png"),
+                _class="desktop hidden-xs hidden-sm",
+            ),
+            _class="col-md-2",
+        ),
+        h.DIV(
+            *poesias,
+            _class="col-md-8",
+        ),
+        h.DIV(
+            h.BR(),
+            h.BR(),
+            h.DIV(
+                h.IMG(src="adorno_r.png"),
+                h.IMG(src="adorno_r.png"),
+                _class="desktop hidden-xs hidden-sm",
+            ),
+            _class="col-md-2",
+        ),
+        _class="row",
+    )
+
+    f.write(tidy(h.render(template(
+        title="Ricardo Boix - Poesías",
+        selected_tab="Poesías",
+        id="bodylibro",
+        content=None,
         extra_container_contents=[extra_container_contents],
     ), {})))
