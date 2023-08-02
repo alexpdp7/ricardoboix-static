@@ -24,7 +24,12 @@ for row in cursor.fetchall():
 
     with open(poema_file, "w") as f:
         texto, audio = cursor2.fetchall()[0]
-        texto = "\n".join([l.lstrip() for l in texto.splitlines()])
+        def _map_line(l):
+            l = l.strip()
+            if l:
+                l += "  "  # for poems, this is a br
+            return l
+        texto = "\n".join(map(_map_line, texto.splitlines()))
         if audio:
             texto += f"\n\naudio:{audio}\n"
         f.write(texto)
