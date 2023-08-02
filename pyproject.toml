@@ -9,6 +9,7 @@ packages = [{include = "ricardoboix_static"}]
 [tool.poetry.dependencies]
 python = "^3.9"
 htmlgenerator = "^1.2.28"
+markdown = "^3.4.4"
 
 
 [build-system]

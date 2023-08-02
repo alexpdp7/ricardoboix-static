@@ -1,41 +1,47 @@
 import pathlib
 import subprocess
 
+import markdown
 import htmlgenerator as h
 
 
 def template(content, title="title", selected_tab=None, id=None, extra_container_contents=[]):
-    tabs = {
-        "Home": "index.html",
-        "Galería de arte": "galeria.html",
-        "Poesías": "poesias.html",
-        "Relatos": "relatos.html",
-        "Canciones": "canciones.html",
-        "Libro de visitas": "librodevisitas.html",
-    }
+    container_contents = []
 
-    menu_lis = [
-        h.LI(
-            h.A(
-                tab,
-                href=link,
-            ),
-            role="presentation",
-            _class="active" if selected_tab == tab else None,
+    if selected_tab:
+        tabs = {
+            "Home": "index.html",
+            "Galería de arte": "galeria.html",
+            "Poesías": "poesias.html",
+            "Relatos": "relatos.html",
+            "Canciones": "canciones.html",
+            "Libro de visitas": "librodevisitas.html",
+        }
+
+        menu_lis = [
+            h.LI(
+                h.A(
+                    tab,
+                    href=link,
+                ),
+                role="presentation",
+                _class="active" if selected_tab == tab else None,
+            )
+            for tab, link in tabs.items()
+        ]
+
+        container_contents.append(
+            h.DIV(
+                h.DIV(
+                    h.UL(
+                        *menu_lis,
+                        _class="nav nav-tabs",
+                    ),
+                    _class="col-md-12",
+                ),
+                _class="row",
+            )
         )
-        for tab, link in tabs.items()
-    ]
-
-    container_contents = [h.DIV(
-        h.DIV(
-            h.UL(
-                *menu_lis,
-                _class="nav nav-tabs",
-            ),
-            _class="col-md-12",
-        ),
-        _class="row",
-    )]
 
     container_contents += extra_container_contents
 
@@ -158,3 +164,24 @@ with open("poesias.html", "w") as f:
         content=None,
         extra_container_contents=[extra_container_contents],
     ), {})))
+
+pathlib.Path("poesias").mkdir(exist_ok=True)
+
+for path in pathlib.Path("poemas").glob("*.md"):
+    with open(path) as poem_file:
+        poem = poem_file.read()
+    poem_html = markdown.markdown(poem)
+    title = pathlib.Path(path).stem
+    html_path = pathlib.Path("poesias") / title
+    html_path = html_path.with_suffix(".html")
+    with open(html_path, "w") as f:
+        f.write(tidy(h.render(template(
+            title=f"Ricardo Boix - Poesías - {pathlib.Path(path).stem}",
+            selected_tab=None,
+            id="bodylibro",
+            content=None,
+            extra_container_contents=[
+                h.H2(title),
+                h.mark_safe(poem_html),
+            ],
+        ), {})))
