@@ -50,7 +50,7 @@ def template(content, title="title", selected_tab=None, id=None, extra_container
             h.TITLE(title),
             h.LINK(href="https://fonts.googleapis.com/css?family=Mr+Dafoe", rel="stylesheet"),
             h.LINK(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css", rel="stylesheet"),
-            h.LINK(href="estilo.css", rel="stylesheet", media="screen"),
+            h.LINK(href="/estilo.css", rel="stylesheet", media="screen"),
             h.SCRIPT(src="http://code.jquery.com/jquery-1.11.1.min.js"),
             h.SCRIPT(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"),
         ),
@@ -177,10 +177,11 @@ for path in pathlib.Path("poemas").glob("*.md"):
         audio = last_line[len("audio:"):]
         poem = poem[:poem.find("audio:")]
         audio_element = h.IFRAME(
-            width="50%",
+            width="100%",
             height="166",
             scrolling="no",
             frameborder="no",
+            style="text-align: center; margin-top: 3em;",
             src=f"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{audio}&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false",
         )
 
@@ -192,7 +193,21 @@ for path in pathlib.Path("poemas").glob("*.md"):
     extra_container_contents = [h.H2(title)]
     if audio_element is not None:
         extra_container_contents.append(audio_element)
-    extra_container_contents.append(h.mark_safe(poem_html))
+    extra_container_contents += [
+        h.DIV(
+            h.mark_safe(poem_html),
+            id="textopoesia",
+        ),
+        h.DIV(
+            h.A(
+                "Volver a Poesías",
+                href="/poesias.html",
+                _class="btn btn-default active",
+                role="button"
+            ),
+            id="button",
+        ),
+    ]
 
     with open(html_path, "w") as f:
         f.write(tidy(h.render(template(
