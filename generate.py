@@ -170,18 +170,35 @@ pathlib.Path("poesias").mkdir(exist_ok=True)
 for path in pathlib.Path("poemas").glob("*.md"):
     with open(path) as poem_file:
         poem = poem_file.read()
+
+    audio_element = None
+    last_line = poem.splitlines()[-1]
+    if last_line.startswith("audio:"):
+        audio = last_line[len("audio:"):]
+        poem = poem[:poem.find("audio:")]
+        audio_element = h.IFRAME(
+            width="50%",
+            height="166",
+            scrolling="no",
+            frameborder="no",
+            src=f"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{audio}&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false",
+        )
+
     poem_html = markdown.markdown(poem)
     title = pathlib.Path(path).stem
     html_path = pathlib.Path("poesias") / title
     html_path = html_path.with_suffix(".html")
+
+    extra_container_contents = [h.H2(title)]
+    if audio_element is not None:
+        extra_container_contents.append(audio_element)
+    extra_container_contents.append(h.mark_safe(poem_html))
+
     with open(html_path, "w") as f:
         f.write(tidy(h.render(template(
             title=f"Ricardo Boix - Poesías - {pathlib.Path(path).stem}",
             selected_tab=None,
             id="bodylibro",
             content=None,
-            extra_container_contents=[
-                h.H2(title),
-                h.mark_safe(poem_html),
-            ],
+            extra_container_contents=extra_container_contents,
         ), {})))
