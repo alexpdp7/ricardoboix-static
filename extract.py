@@ -33,3 +33,20 @@ for row in cursor.fetchall():
         if audio:
             texto += f"\n\naudio:{audio}\n"
         f.write(texto)
+
+
+cursor = connection.cursor()
+cursor.execute("select * from relatos")
+
+
+relatos = pathlib.Path("relatos_md")
+shutil.rmtree(relatos, ignore_errors=True)
+relatos.mkdir()
+
+
+for row in cursor.fetchall():
+    titulo, texto = row
+    relato_file = relatos / f"{titulo}.md"
+    with open(relato_file, "w") as f:
+        texto = "\n".join(map(str.strip, texto.splitlines())) + "\n"
+        f.write(texto)
