@@ -335,3 +335,22 @@ with open("canciones.html", "w") as f:
         content=None,
         extra_container_contents=[extra_container_contents],
     ), {})))
+
+
+with open("librodevisitas.html", "w") as f:
+    extra_container_contents = h.DIV(
+        h.BR(),
+        h.DIV(
+            h.mark_safe(markdown.markdown(open("librodevisitas.md").read())),
+            _class="col-md-8",
+        ),
+        _class="row",
+    )
+
+    f.write(tidy(h.render(template(
+        title="Ricardo Boix - Libro de visitas",
+        selected_tab="Libro de visitas",
+        id="librovisitas",
+        content=None,
+        extra_container_contents=[extra_container_contents],
+    ), {})))

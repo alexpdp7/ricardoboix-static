@@ -122,7 +122,7 @@ body
   background-color: rgba(252, 255, 81, 0.53);
 }
 
-.librovisitas
+#librovisitas body
 {
   background-color: rgba(253, 122, 28, 0.57);
 }
@@ -153,12 +153,12 @@ a
   background-color: #fcff51 !important;
 }
 
-.librovisitas	.nav-tabs > li > a:hover
+#librovisitas	.nav-tabs > li > a:hover
 {
   background-color: #fd7a1c !important;
 }
 
-.librovisitas .nav-tabs > li.active > a
+#librovisitas .nav-tabs > li.active > a
 {
   background-color: #fd7a1c !important;
 }
