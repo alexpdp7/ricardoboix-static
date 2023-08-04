@@ -7,7 +7,7 @@ import markdown
 import htmlgenerator as h
 
 
-def template(content, title="title", selected_tab=None, id=None, extra_container_contents=[]):
+def template(content, title="title", selected_tab=None, id=None, extra_container_contents=[], rel=""):
     container_contents = []
 
     if selected_tab:
@@ -52,7 +52,7 @@ def template(content, title="title", selected_tab=None, id=None, extra_container
             h.TITLE(title),
             h.LINK(href="https://fonts.googleapis.com/css?family=Mr+Dafoe", rel="stylesheet"),
             h.LINK(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css", rel="stylesheet"),
-            h.LINK(href="/estilo.css", rel="stylesheet", media="screen"),
+            h.LINK(href=f"{rel}estilo.css", rel="stylesheet", media="screen"),
             h.SCRIPT(src="http://code.jquery.com/jquery-1.11.1.min.js"),
             h.SCRIPT(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"),
         ),
@@ -205,7 +205,7 @@ for path in pathlib.Path("poemas").glob("*.md"):
         h.DIV(
             h.A(
                 "Volver a Poesías",
-                href="/poesias.html",
+                href="../poesias.html",
                 _class="btn btn-default active",
                 role="button"
             ),
@@ -220,6 +220,7 @@ for path in pathlib.Path("poemas").glob("*.md"):
             id="bodylibro",
             content=None,
             extra_container_contents=extra_container_contents,
+            rel="../",
         ), {})))
 
 
@@ -281,7 +282,7 @@ for path in pathlib.Path("relatos_md").glob("*.md"):
         h.DIV(
             h.A(
                 "Volver a Relatos",
-                href="/relatos.html",
+                href="../relatos.html",
                 _class="btn btn-default active",
                 role="button"
             ),
@@ -295,6 +296,7 @@ for path in pathlib.Path("relatos_md").glob("*.md"):
             selected_tab=None,
             content=None,
             extra_container_contents=extra_container_contents,
+            rel="../",
         ), {})))
 
 
