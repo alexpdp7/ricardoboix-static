@@ -305,7 +305,7 @@ with open("canciones.html", "w") as f:
     def playlist_to_html(playlist):
         title, id = playlist
         return [
-            h.H2(title),
+            h.H2(title, style="text-align: center"),
             h.DIV(
                 h.IFRAME(
                     width="50%",
@@ -314,12 +314,12 @@ with open("canciones.html", "w") as f:
                     frameborder="no",
                     src=f"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/{id}&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
                 ),
+                style="text-align: center",
             ),
             h.BR(),
         ]
 
     extra_container_contents = h.DIV(
-        h.BR(),
         h.BR(),
         h.DIV(
             *itertools.chain(*map(playlist_to_html, playlists)),
