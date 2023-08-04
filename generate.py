@@ -1,5 +1,6 @@
 import itertools
 import pathlib
+import shutil
 import subprocess
 
 import markdown
@@ -72,7 +73,9 @@ def tidy(s):
     return p.stdout
 
 
-with open("index.html", "w") as f:
+pathlib.Path("generated").mkdir()
+
+with open("generated/index.html", "w") as f:
     f.write(tidy(h.render(template(
         title="Ricardo Boix",
         selected_tab="Home",
@@ -80,7 +83,7 @@ with open("index.html", "w") as f:
         content=h.DIV("Ricardo Boix", id="titulo"),
     ), {})))
 
-with open("galeria.html", "w") as f:
+with open("generated/galeria.html", "w") as f:
     links = [
         h.A(
             h.IMG(
@@ -109,7 +112,7 @@ with open("galeria.html", "w") as f:
         extra_container_contents=[extra_container_contents],
     ), {})))
 
-with open("poesias.html", "w") as f:
+with open("generated/poesias.html", "w") as f:
     def _p(path: pathlib.Path):
         with open(path) as f:
             has_audio = "audio:" in f.read()
@@ -166,7 +169,7 @@ with open("poesias.html", "w") as f:
         extra_container_contents=[extra_container_contents],
     ), {})))
 
-pathlib.Path("poesias").mkdir(exist_ok=True)
+(pathlib.Path("generated") / "poesias").mkdir()
 
 for path in pathlib.Path("poemas").glob("*.md"):
     with open(path) as poem_file:
@@ -188,7 +191,7 @@ for path in pathlib.Path("poemas").glob("*.md"):
 
     poem_html = markdown.markdown(poem)
     title = pathlib.Path(path).stem
-    html_path = pathlib.Path("poesias") / title
+    html_path = pathlib.Path("generated") / "poesias" / title
     html_path = html_path.with_suffix(".html")
 
     extra_container_contents = [h.H2(title)]
@@ -220,7 +223,7 @@ for path in pathlib.Path("poemas").glob("*.md"):
         ), {})))
 
 
-with open("relatos.html", "w") as f:
+with open("generated/relatos.html", "w") as f:
     relatos = [
         h.P(
             h.A(
@@ -258,7 +261,7 @@ with open("relatos.html", "w") as f:
         extra_container_contents=extra_container_contents,
     ), {})))
 
-pathlib.Path("relatos").mkdir(exist_ok=True)
+(pathlib.Path("generated") / "relatos").mkdir()
 
 for path in pathlib.Path("relatos_md").glob("*.md"):
     with open(path) as relato_file:
@@ -266,7 +269,7 @@ for path in pathlib.Path("relatos_md").glob("*.md"):
 
     relato_html = markdown.markdown(relato)
     title = pathlib.Path(path).stem
-    html_path = pathlib.Path("relatos") / title
+    html_path = pathlib.Path("generated") / "relatos" / title
     html_path = html_path.with_suffix(".html")
 
     extra_container_contents = [h.H2(title)]
@@ -295,7 +298,7 @@ for path in pathlib.Path("relatos_md").glob("*.md"):
         ), {})))
 
 
-with open("canciones.html", "w") as f:
+with open("generated/canciones.html", "w") as f:
     playlists = [
         ("Tangos", 337001614),
         ("Boleros", 337008899),
@@ -337,7 +340,7 @@ with open("canciones.html", "w") as f:
     ), {})))
 
 
-with open("librodevisitas.html", "w") as f:
+with open("generated/librodevisitas.html", "w") as f:
     extra_container_contents = h.DIV(
         h.BR(),
         h.DIV(
@@ -354,3 +357,12 @@ with open("librodevisitas.html", "w") as f:
         content=None,
         extra_container_contents=[extra_container_contents],
     ), {})))
+
+
+for asset in pathlib.Path("assets").glob("*"):
+    shutil.copy(asset, "generated")
+
+(pathlib.Path("generated") / "foto").mkdir()
+
+for foto in pathlib.Path("foto").glob("*"):
+    shutil.copy(foto, "generated/foto/")
