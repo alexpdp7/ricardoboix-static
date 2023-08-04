@@ -217,3 +217,78 @@ for path in pathlib.Path("poemas").glob("*.md"):
             content=None,
             extra_container_contents=extra_container_contents,
         ), {})))
+
+
+with open("relatos.html", "w") as f:
+    relatos = [
+        h.P(
+            h.A(
+                titulo,
+                href=f"relatos/{titulo}.html"
+            ),
+            style="text-align: center",
+        )
+        for titulo in map(lambda p: p.stem, sorted(pathlib.Path("relatos_md").glob("*.md")))
+    ]
+    extra_container_contents = [
+        h.DIV(
+            h.BR(),
+            h.BR(),
+            h.BR(),
+            h.BR(),
+            h.BR(),
+            h.BR(),
+            h.BR(),
+            h.BR(),
+            h.DIV(
+                *relatos,
+            ),
+        ),
+        h.IMG(
+            id="indicerelatos",
+            src="skyline.png",
+        ),
+    ]
+
+    f.write(tidy(h.render(template(
+        title="Ricardo Boix - Relatos",
+        selected_tab="Relatos",
+        content=None,
+        extra_container_contents=extra_container_contents,
+    ), {})))
+
+pathlib.Path("relatos").mkdir(exist_ok=True)
+
+for path in pathlib.Path("relatos_md").glob("*.md"):
+    with open(path) as relato_file:
+        relato = relato_file.read()
+
+    relato_html = markdown.markdown(relato)
+    title = pathlib.Path(path).stem
+    html_path = pathlib.Path("relatos") / title
+    html_path = html_path.with_suffix(".html")
+
+    extra_container_contents = [h.H2(title)]
+    extra_container_contents += [
+        h.DIV(
+            h.mark_safe(relato_html),
+            id="textorelato",
+        ),
+        h.DIV(
+            h.A(
+                "Volver a Relatos",
+                href="/relatos.html",
+                _class="btn btn-default active",
+                role="button"
+            ),
+            id="button",
+        ),
+    ]
+
+    with open(html_path, "w") as f:
+        f.write(tidy(h.render(template(
+            title=f"Ricardo Boix - Relatos - {pathlib.Path(path).stem}",
+            selected_tab=None,
+            content=None,
+            extra_container_contents=extra_container_contents,
+        ), {})))
