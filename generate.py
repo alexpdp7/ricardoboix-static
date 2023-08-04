@@ -1,3 +1,4 @@
+import itertools
 import pathlib
 import subprocess
 
@@ -292,3 +293,45 @@ for path in pathlib.Path("relatos_md").glob("*.md"):
             content=None,
             extra_container_contents=extra_container_contents,
         ), {})))
+
+
+with open("canciones.html", "w") as f:
+    playlists = [
+        ("Tangos", 337001614),
+        ("Boleros", 337008899),
+        ("Varios", 337009203),
+    ]
+
+    def playlist_to_html(playlist):
+        title, id = playlist
+        return [
+            h.H2(title),
+            h.DIV(
+                h.IFRAME(
+                    width="50%",
+                    height="400",
+                    scrolling="no",
+                    frameborder="no",
+                    src=f"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/{id}&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
+                ),
+            ),
+            h.BR(),
+        ]
+
+    extra_container_contents = h.DIV(
+        h.BR(),
+        h.BR(),
+        h.DIV(
+            *itertools.chain(*map(playlist_to_html, playlists)),
+            _class="col-md-8",
+        ),
+        _class="row",
+    )
+
+    f.write(tidy(h.render(template(
+        title="Ricardo Boix - Canciones",
+        selected_tab="Canciones",
+        id="bodylibro",
+        content=None,
+        extra_container_contents=[extra_container_contents],
+    ), {})))
