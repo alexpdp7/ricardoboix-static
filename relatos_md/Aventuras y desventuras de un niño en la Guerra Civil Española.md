@@ -13,11 +13,11 @@ A todo esto, mi padre se atrevía cantando peteneras como aquella que a mí me c
 
 
 
-"Niño que en cuero y descalzo
-vas llorando por la calle
-ven acá y llora conmigo
-que tampoco tengo madre
-que la perdí siendo niño".
+"Niño que en cuero y descalzo  
+vas llorando por la calle  
+ven acá y llora conmigo  
+que tampoco tengo madre  
+que la perdí siendo niño".  
 
 
 
@@ -49,25 +49,25 @@ Las buenas gentes del barrio estábamos horrorizados por tales hechos, asustados
 
 De su libro de poemas del Romancero Gitano, entre mis preferidas, estaba Romance de la luna, luna.
 
-"La luna vino a la fragua
-con su polisón de nardos.
-El niño la mira, mira.
-El niño la está mirando".
+"La luna vino a la fragua  
+con su polisón de nardos.  
+El niño la mira, mira.  
+El niño la está mirando".  
 
 Entre muchas otras, hay una que me causa una sensación extraña, se trata del Romance de la Guardia Civil.
 
-"Los caballos negros son.
-Las herraduras son negras.
-Sobre las capas relucen
-manchas de tinta y de cera.
-Tienen, por eso no lloran,
-de plomo las calaveras".
+"Los caballos negros son.  
+Las herraduras son negras.  
+Sobre las capas relucen  
+manchas de tinta y de cera.  
+Tienen, por eso no lloran,  
+de plomo las calaveras".  
 
 Y aquella que se hizo tan popular. La casada infiel.
 
-"Y yo me la llevé al río
-creyendo que era mozuela,
-pero tenia marido".
+"Y yo me la llevé al río  
+creyendo que era mozuela,  
+pero tenia marido".  
 
 Empezaron los cañonazos y empezó el éxodo del barrio. Las familias transportaban sus enseres más necesarios- ropas, colchones, etc.- en unos carritos de mano de alquiler muy utilizados en aquellos años en Madrid. Se dirigían al centro de la ciudad, preferentemente al barrio de Salamanca a ocupar los pisos vacíos abandonados por sus dueños, ya que generalmente eran partidarios de las tropas sublevadas y temían graves represalias.
 En aquellas amplias viviendas se alojaban varias familias de distinta índole, los cuales por medio de un infiernillo eléctrico cocinaban lo que buenamente podían.
@@ -92,11 +92,11 @@ Un pequeño grupo armado asaltó un templo religioso sito en la calle Blasco de 
 Se combatía encarnizadamente en todos los frentes, en Navacerrada, en Somosierra, donde lucharon en primera línea un destacamento de milicianas.
 Fue en Guadalajara, donde las tropas italianas sufrieron un gran revés.  Se hizo una canción sobre esto que se popularizó enseguida:
 
-"En los campos de Guadalajara
-tropas italianas quisieron pasar
-no contaban con la gran paliza
-que el pueblo de España
-les iban a dar"
+"En los campos de Guadalajara  
+tropas italianas quisieron pasar  
+no contaban con la gran paliza  
+que el pueblo de España  
+les iban a dar"  
 
 Las gentes comentaban irónicamente los hechos.
 “Todo ha sido debido”, decían, “a que los italianos no entendían muy bien el castellano y debieron confundir la orden de ”a las bayonetas” con ”a las camionetas”, montaron en ellas y huyeron despavoridos como alma que lleva el demonio”.
@@ -124,9 +124,9 @@ Como ya ha descrito anteriormente, la gente empezó a hacer su vida normal, y en
 
 No recuerdo exactamente cuándo empezaron los racionamientos, nos asignaron una cartilla por familia y teníamos derecho a:
 
-Un cuarto de kilo de lentejas,
-un cuarto de litro de aceite y
-alguna cosa más (todo por persona y a la semana)
+Un cuarto de kilo de lentejas,  
+un cuarto de litro de aceite y  
+alguna cosa más (todo por persona y a la semana)  
 
 también teníamos derecho a un cuarto de libreta de pan por persona, pero diariamente. He de reseñar que durante el tiempo que duró la contienda no nos faltó ni un solo día nuestra ración de pan.
 
@@ -149,9 +149,9 @@ Como curiosidad diré que el dinero fraccionario metálico no existía y en su l
 Cuando mi padre encontró trabajo, me buscó una plaza en un colegio academia en el que dábamos clases por las tardes. El director era un apasionado de las letras y las artes y en la enseñanza predominaban éstas.
 Todos los días que no teníamos matemáticas (alternos) empezábamos las clases con media hora de dictado tomado del Quijote:
 
-"Apenas había el rubicundo Apolo tendido por
-la faz de la ancha y espaciosa tierra las doradas
-hebras de sus hermosos cabellos…"
+"Apenas había el rubicundo Apolo tendido por  
+la faz de la ancha y espaciosa tierra las doradas  
+hebras de sus hermosos cabellos…"  
 
 Y acabábamos con otra hora de actividades artísticas. Se había formado un cuadro artístico en el cual alternábamos sainetes interpretados por todos los componentes o bien actuaciones personales.
 
@@ -167,22 +167,22 @@ Se corrió el rumor de que en la casa de Las Flores (esquina de la calle Hilari�
 En el colegio seguían las actividades artísticas y comenzamos a dar recitales en diversos lugares, tal como hacen hoy los centros de jubilados.
 En las actividades individuales destacaba una niña que recitaba de maravilla. Tenía un amplio repertorio como La Galana de Gabriel y Galán o el Piyayo:
 
-"Las espinas se comen también
-que tó es alimento.
-Así despasito, muy remascaito".
---------------
-"A chufla lo toma la gente
-pero a mi me da pena
-y me causa un respeto imponente".
+"Las espinas se comen también  
+que tó es alimento.  
+Así despasito, muy remascaito".  
+--------------  
+"A chufla lo toma la gente  
+pero a mi me da pena  
+y me causa un respeto imponente".  
 
 La guinda de nuestras actividades la pusimos con la representación de la obra “Oratoria Fin de Siglo” en el cine Monumental de Madrid, un gigantesco coliseo con más de mil localidades entre butacas, palcos y sus tres anfiteatros existentes.  El escenario ofrecía una sala de juicios, con un estrado para los conferenciantes y una mesa que yo ocupaba como juez, ya que tenía que presentarlos y juzgar posteriormente sus actuaciones.  Al levantarse el telón, aumentó mi nerviosismo al escuchar el estruendo de tantas voces. Las luces de las candilejas me impedían ver al público, lo que ayudó a calmarme. El rumor desapareció súbitamente cuando empecé mi actuación diciendo: “Muy buenas tardes, señores, me alegro de verles tan buenos y aquí me tienen dispuesto a entretenerles a ustedes, etc.”	La actuación se cerró con una gran ovación y con comentarios halagadores sobre la calidad de aquellos mozalbetes. Entonces sentí una gran sensación de bienestar y solo me faltaba saltar mientras nos repartíamos besos por doquier. Enseguida comprendí lo que suponen los aplausos para los artistas consagrados.
 
 Antes de comenzar nuestra actuación, descubrí entre bastidores un voluminoso contrabajo. Al pulsar las cuerdas se llenó el recinto de un sonido grave y triste que me recordó a Gustavo Adolfo Becquer:
 
-"Del rincón en el ángulo oscuro
-de su dueña quizás olvidada
-silenciosa y cubierta de polvo
-veíase el arpa"
+"Del rincón en el ángulo oscuro  
+de su dueña quizás olvidada  
+silenciosa y cubierta de polvo  
+veíase el arpa"  
 
 De vuelta a mis andadas, en mis incursiones para tratar de encontrar algo necesario prefería ir solo.
 En las viviendas más próximas al frente, habían practicado unos boquetes en las medianerías para poder pasar de unas a otras sin tener que salir al exterior, pues en algún frente se llegó a combatir casa por casa, agujeros que yo utilizaba para eludir los controles de milicianos.
@@ -214,29 +214,29 @@ Así terminó felizmente aquel episodio que empezó tan mal aquel verano en Bust
 
 Primavera
 
-"…fueron instantes de dulcísima ceguera
-ante el fulgor de tus ojos rutilantes
-porque tú también, eres mi primavera"
+"…fueron instantes de dulcísima ceguera  
+ante el fulgor de tus ojos rutilantes  
+porque tú también, eres mi primavera"  
 
 
 Verano
 
-"…que un sol de justicia está cayendo
-sobre su ancha espalda ya corvada
-y su arrugada frente está perlada
-de gotas del sudor que va fluyendo"
+"…que un sol de justicia está cayendo  
+sobre su ancha espalda ya corvada  
+y su arrugada frente está perlada  
+de gotas del sudor que va fluyendo"  
 
 
 Otoño
 
-"...un débil sol en su ocaso va tiñendo
-de púrpura y oro el horizonte"
+"...un débil sol en su ocaso va tiñendo  
+de púrpura y oro el horizonte"  
 
 
 Invierno
 
-"...el invierno sepultó por un tiempo los arados
-yermó las tierras y trocó el agua por hielo"
+"...el invierno sepultó por un tiempo los arados  
+yermó las tierras y trocó el agua por hielo"  
 
 
 Pasaron algunos meses, la guerra tocaba a su fin y una noche en la que las mujeres disfrutaban de la buena temperatura charlando a la puerta de nuestra casa y mis amigos y yo estábamos sentados en el borde de la acera, aparecieron surgiendo de la oscuridad un grupo de soldados cantando y vociferando. Al ver al grupo de mujeres se acercaron y, repartiendo abrazos a todos los que estábamos, dijeron: “Somos soldados nacionales. La guerra ha terminado”.
